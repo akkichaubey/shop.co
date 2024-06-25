@@ -1,0 +1,260 @@
+@charset "UTF-8";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('../fonts/Satoshi/false.eot');
+    src: url('../fonts/Satoshi/false.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Satoshi/false.woff') format('woff'),
+        url('../fonts/Satoshi/false.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('../fonts/Satoshi/false_1.eot');
+    src: url('../fonts/Satoshi/false_1.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Satoshi/false_1.woff') format('woff'),
+        url('../fonts/Satoshi/false_1.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('../fonts/Satoshi/false_2.eot');
+    src: url('../fonts/Satoshi/false_2.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Satoshi/false_2.woff') format('woff'),
+        url('../fonts/Satoshi/false_2.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Integral CF';
+    src: url('../fonts/integral-cf/IntegralCFMediumRegular.eot');
+    src: url('../fonts/integral-cf/IntegralCFMediumRegular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/integral-cf/IntegralCFMediumRegular.woff') format('woff'),
+        url('../fonts/integral-cf/IntegralCFMediumRegular.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Integral CF';
+    src: url('../fonts/integral-cf/IntegralCFRegular.eot');
+    src: url('../fonts/integral-cf/IntegralCFRegular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/integral-cf/IntegralCFRegular.woff') format('woff'),
+        url('../fonts/integral-cf/IntegralCFRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Integral CF';
+    src: url('../fonts/integral-cf/IntegralCFBoldRegular.eot');
+    src: url('../fonts/integral-cf/IntegralCFBoldRegular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/integral-cf/IntegralCFBoldRegular.woff') format('woff'),
+        url('../fonts/integral-cf/IntegralCFBoldRegular.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@layer base {
+
+    html,
+    body {
+        @apply font-body;
+    }
+
+    body {
+        @apply text-base leading-snug;
+    }
+
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+        @apply font-bold text-black font-integral;
+    }
+
+    .large {
+        @apply text-[64px] leading-none xl:text-[54px] xl:leading-none lg:text-5xl lg:leading-none md:text-4xl md:leading-none;
+    }
+
+    h1,
+    .h1 {
+        @apply text-[48px] leading-[1.2] xl:text-[42px] lg:text-4xl sm:text-2xl;
+    }
+
+    h2,
+    .h2 {
+        @apply text-[40px] leading-[1.125] md:text-[32px];
+    }
+
+    h3,
+    .h3 {
+        @apply text-4xl leading-[1.33];
+    }
+
+    h4,
+    .h4 {
+        @apply text-[32px] leading-[1.31];
+    }
+
+    h5,
+    .h5 {
+        @apply text-2xl leading-snug;
+    }
+
+    h6,
+    .h6 {
+        @apply text-lg leading-snug;
+    }
+
+    p {
+        @apply mb-4 last:mb-0;
+    }
+
+
+}
+
+@layer components {
+    .t-transition {
+        @apply transition-all duration-300 ease-in-out;
+    }
+
+    .input-box {
+        @apply [&>input]:shadow-none [&>input]:outline-none [&>input]:focus:shadow-none [&>input]:focus:outline-none
+    }
+
+    .cta-btn {
+        @apply inline-flex text-base leading-none font-medium py-[14px] px-[24px] rounded-full border border-transparent t-transition sm:text-sm sm:leading-none;
+    }
+
+    .cta-btn.md {
+        @apply py-[17px] px-[29px]
+    }
+
+    .cta-btn.black {
+        @apply bg-black text-white hover:border-black hover:bg-transparent hover:text-black
+    }
+
+    .cta-btn.cta-grey-outline {
+        @apply bg-white text-black border-black border-opacity-10 hover:border-black hover:bg-black hover:text-white
+    }
+
+    .cta-btn.cta-grey {
+        @apply bg-primary-light text-black text-opacity-60 hover:bg-black hover:text-white [&.active]:bg-black [&.active]:text-white;
+    }
+
+    .cta-btn.black-outline {
+        @apply border-black border-opacity-10 bg-transparent text-black hover:border-black hover:bg-black hover:text-white
+    }
+
+    .product-box {
+        @apply [&>.img]:flex [&>.img]:justify-center [&>.img]:rounded-[20px] [&>.img]:bg-primary-light [&>.img]:overflow-hidden [&>.title]:font-body [&>.title]:text-xl [&>.title]:capitalize [&>.title]:pt-4 [&>.title]:pb-2
+    }
+
+    .product-box .rating {
+        @apply flex items-center gap-x-3
+    }
+
+    .product-box .rating>ul {
+        @apply inline-flex gap-x-1 [&>li>.icon]:w-4 [&>li>.icon]:h-4;
+    }
+
+    .product-box .rating>div {
+        @apply inline-flex text-sm font-medium text-black text-opacity-60
+    }
+
+    .product-box .price {
+        @apply pt-1 flex gap-x-3 items-center
+    }
+
+    .product-box .price :is(.new, .old) {
+        @apply inline-block text-2xl md:text-xl font-bold font-body text-black
+    }
+
+    .product-box .price .old {
+        @apply text-opacity-40
+    }
+
+    .product-box .price .off {
+        @apply text-xs text-[#FF3333] bg-[#FF3333] bg-opacity-10 px-3 py-[6px] rounded-full
+    }
+
+    .testimonial-box {
+        @apply h-full py-7 px-8 sm:p-5 rounded-[24px] border border-black border-opacity-10
+    }
+
+    .testimonial-box .rating {
+        @apply pb-4
+    }
+
+    .testimonial-box .rating ul {
+        @apply inline-flex items-center gap-x-[6px]
+    }
+
+    .testimonial-box .rating ul li {
+        @apply inline-flex items-center
+    }
+
+    .testimonial-box .rating ul li .icon {
+        @apply w-5 h-5;
+    }
+
+    .testimonial-box h3 {
+        @apply flex items-center gap-x-1 text-xl font-body pb-3
+    }
+
+    .testimonial-box p {
+        @apply text-base leading-snug text-black text-opacity-60 m-0
+    }
+
+    .testimonial-box .date {
+        @apply text-base leading-snug font-medium text-black text-opacity-60 pt-6 sm:pt-4
+    }
+
+    .testimonial-slider .swiper-slide {
+        @apply blur-[2px] t-transition
+    }
+
+    .testimonial-slider .swiper-slide.swiper-slide-prev {
+        @apply blur-0 md:blur-[2px]
+    }
+
+    .testimonial-slider .swiper-slide.swiper-slide-active {
+        @apply blur-0
+    }
+
+    .testimonial-slider .swiper-slide.swiper-slide-next {
+        @apply blur-0 md:blur-[2px]
+    }
+
+    .color ul {
+        @apply flex flex-wrap gap-4 [&>li]:inline-flex [&>li>span]:grid [&>li>span]:place-items-center [&>li>span]:w-9 [&>li>span]:h-9 [&>li>span]:rounded-full [&>li>span]:border [&>li>span]:text-white [&>li>span>.icon]:t-transition [&>li>span>.icon]:invisible [&>li>span.active>.icon]:visible [&>li>span:hover>.icon]:visible
+    }
+
+
+    select.select {
+        @apply appearance-none bg-[url('../images/icons/chevron-down-icon.svg')] bg-no-repeat bg-[center_right_20px] hover:bg-[url('../images/icons/chevron-down-white-icon.svg')];
+    }
+}
